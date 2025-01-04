@@ -27,3 +27,9 @@ sudo make install
 4.Install Protocol Buffers: gRPC relies on Protocol Buffers (protobuf) for defining services.
 
 sudo apt-get install protobuf-compiler
+
+
+5. create .proto file and to generate code:
+for example: helloworld.proto
+# Run the command to generate C++ files
+protoc -I=. --cpp_out=. --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` helloworld.proto

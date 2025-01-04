@@ -3,7 +3,7 @@ syntax = "proto3";
 package helloworld;
 
 service Greeter {
-  // Defines a single method in the service: SayHello
+  // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
@@ -14,4 +14,3 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
-

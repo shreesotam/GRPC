@@ -35,7 +35,7 @@ class Greeter final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Defines a single method in the service: SayHello
+    // Sends a greeting
     virtual ::grpc::Status SayHello(::grpc::ClientContext* context, const ::helloworld::HelloRequest& request, ::helloworld::HelloReply* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::helloworld::HelloReply>> AsyncSayHello(::grpc::ClientContext* context, const ::helloworld::HelloRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::helloworld::HelloReply>>(AsyncSayHelloRaw(context, request, cq));
@@ -46,7 +46,7 @@ class Greeter final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      // Defines a single method in the service: SayHello
+      // Sends a greeting
       virtual void SayHello(::grpc::ClientContext* context, const ::helloworld::HelloRequest* request, ::helloworld::HelloReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SayHello(::grpc::ClientContext* context, const ::helloworld::HelloRequest* request, ::helloworld::HelloReply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -93,7 +93,7 @@ class Greeter final {
    public:
     Service();
     virtual ~Service();
-    // Defines a single method in the service: SayHello
+    // Sends a greeting
     virtual ::grpc::Status SayHello(::grpc::ServerContext* context, const ::helloworld::HelloRequest* request, ::helloworld::HelloReply* response);
   };
   template <class BaseClass>

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/server.dir/serverProject/server.cpp.o CMakeFiles/server.dir/helloworld.pb.cc.o CMakeFiles/server.dir/helloworld.grpc.pb.cc.o -o server  /usr/local/lib/libprotobuf.a /usr/local/lib/libabsl_base.a /usr/local/lib/libabsl_flags.a /usr/local/lib/libabsl_time.a /usr/local/lib/libabsl_status.a 
